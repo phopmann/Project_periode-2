@@ -1,0 +1,532 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* index */
+
+body {
+    margin: 0;
+    background-color: #fafaff;
+    font-family: Arial, sans-serif;
+    color: #292940;
+}
+
+.navbar {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #e9e8fa;
+    border-bottom: 1px solid #d5d3e8;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    z-index: 10;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar nav a {
+    color: #292940;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar nav a:hover {
+    color: #625b9d;
+}
+
+.main-container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: white;
+    border: 1px solid #e7e7f2;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
+    box-sizing: border-box;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e7e7f2;
+}
+
+.intro-tekst {
+    width: 45%;
+    background-color: #fafaff;
+    border: 1px solid #e7e7f2;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.intro-tekst h1 {
+    color: #292940;
+}
+
+.intro-tekst p {
+    color: #626274;
+    line-height: 1.7;
+}
+
+.portret {
+    width: 55%;
+    height: 360px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.projecten {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-top: 25px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #e7e7f2;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #292940;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
+    transition: transform 0.2s;
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    background-color: #fafaff;
+    border-radius: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.card h2 {
+    color: #292940;
+    font-size: 20px;
+}
+
+.card p {
+    color: #626274;
+    line-height: 1.5;
+}
+
+.card:hover {
+    background-color: #fafaff;
+    transform: translateY(-5px);
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #e9e8fa;
+    color: #292940;
+}
+
+footer a {
+    color: #625b9d;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* vaardigheden */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #e7e7f2;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e7e7f2;
+    color: #292940;
+}
+
+th {
+    background-color: #625b9d;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #fafaff;
+}
+
+tr:hover {
+    background-color: #eeecfa;
+}
+
+/* projecten */
+
+.projecten-pagina {
+    max-width: 1100px;
+    width: 85%;
+    margin: 40px auto;
+    color: #292940;
+}
+
+.projecten-pagina h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #292940;
+    margin-bottom: 15px;
+}
+
+.projecten-intro {
+    text-align: center;
+    color: #626274;
+    margin-bottom: 35px;
+}
+
+
+.projecten-overzicht {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.project-placeholder {
+    background-color: white;
+    border: 1px solid #e7e7f2;
+    padding: 20px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
+    transition: transform 0.2s;
+}
+
+.project-placeholder:hover {
+    transform: translateY(-5px);
+}
+
+.project-afbeelding {
+    height: 120px;
+    background-color: #fafaff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.project-afbeelding img {
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.project-placeholder h2 {
+    color: #292940;
+    font-size: 21px;
+}
+
+
+.project-placeholder p {
+    color: #626274;
+    line-height: 1.6;
+}
+
+
+.project-placeholder span {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #eeecfa;
+    color: #625b9d;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+
+.project-placeholder a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* contact */
+
+.contactpagina {
+    width: 85%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.contactpagina > h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #292940;
+}
+
+.contactpagina > p {
+    text-align: center;
+    color: #626274;
+    margin-bottom: 35px;
+}
+
+
+.ContactInfo {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e7e7f2;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
+}
+
+.ContactInfo h2 {
+    margin-top: 0;
+    color: #292940;
+}
+
+.ContactInfo a {
+    color: #625b9d;
+    text-decoration: none;
+}
+
+.ContactInfo a:hover {
+    text-decoration: underline;
+}
+
+
+.contactformulier {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #e7e7f2;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
+}
+
+.contactformulier h2 {
+    margin-top: 0;
+    color: #292940;
+}
+
+.contactformulier form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contactformulier label {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.contactformulier input,
+.contactformulier textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5d3e8;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    background-color: #fafaff;
+}
+
+.contactformulier input:focus,
+.contactformulier textarea:focus {
+    outline: 2px solid #aaa4e0;
+    border-color: #7771bb;
+}
+
+.contactformulier textarea {
+    resize: vertical;
+}
+
+.contactformulier button {
+    margin-top: 10px;
+    padding: 13px;
+    background-color: #625b9d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.contactformulier button:hover {
+    background-color: #494375;
+}
+
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #e9e8fa;
+    color: #292940;
+}
+
+footer a:hover {
+    background-color: lightgray;
+}
+
+/* footer */
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.footer {
+    margin-top: 0;
+}
+
+/* Telefoon */
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navbar nav a {
+        font-size: 14px;
+    }
+
+    .main-container {
+        width: 94%;
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    .intro {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .intro-tekst,
+    .portret {
+        width: 100%;
+    }
+
+    .portret {
+        height: 250px;
+    }
+
+    .projecten {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    table {
+        width: 100%;
+        table-layout: fixed;
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 10px 6px;
+        overflow-wrap: break-word;
+    }
+
+    .projecten-pagina {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .projecten-pagina h1 {
+        font-size: 28px;
+    }
+
+    .projecten-overzicht {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .project-placeholder {
+        padding: 15px;
+    }
+
+    .contactpagina {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .contactpagina > h1 {
+        font-size: 28px;
+    }
+
+    .ContactInfo,
+    .contactformulier {
+        padding: 18px;
+    }
+
+    .contactformulier input,
+    .contactformulier textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    footer {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
