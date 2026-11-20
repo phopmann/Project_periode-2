@@ -1,5 +1,61 @@
+:root {
+    --background: #fafaff;
+    --text: #292940;
+    --muted-text: #626274;
+
+    --navbar: #e9e8fa;
+    --navbar-border: #d5d3e8;
+
+    --surface: #ffffff;
+    --soft-background: #fafaff;
+
+    --border: #e7e7f2;
+    --input-border: #d5d3e8;
+
+    --accent: #625b9d;
+    --accent-hover: #494375;
+    --soft-accent: #eeecfa;
+    --basevariant: #d5d3ed;
+}
+
+.darkmode {
+    --background: #20202e;
+    --text: #f5f5ff;
+    --muted-text: #c0c0d0;
+
+    --navbar: #292940;
+    --navbar-border: #414158;
+
+    --surface: #303044;
+    --soft-background: #262638;
+
+    --border: #49495e;
+    --input-border: #49495e;
+
+    --accent: #b9a9ff;
+    --accent-hover: #c9bdff;
+    --soft-accent: #3b3b50;
+    --basevariant: #3b3b50;
+}
+
 * {
     box-sizing: border-box;
+}
+
+.intro-tekst h1,
+.card h2,
+.project-placeholder h2,
+.ContactInfo h2,
+.contactformulier h2 {
+    color: var(--text);
+}
+
+.intro-tekst p,
+.card p,
+.projecten-intro,
+.project-placeholder p,
+.contactpagina > p {
+    color: var(--muted-text);
 }
 
 html {
@@ -9,24 +65,68 @@ html {
 
 body {
     width: 100%;
+    min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+
+    display: flex;
+    flex-direction: column;
 }
 
 /* index */
 
-body {
-    margin: 0;
-    background-color: #fafaff;
-    font-family: Arial, sans-serif;
-    color: #292940;
+#modalbox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 450px;
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: var(--surface);
+    color: var(--text);
+    border-radius: 8px;
+    display: none;
+}
+
+.cookies {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+#modalbox button {
+    background: #ff5945;
+    color: #fff;
+    padding: 15px 0;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    margin-top: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.close-icon {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
 }
 
 .navbar {
     width: 100%;
-    box-sizing: border-box;
-    background-color: #e9e8fa;
-    border-bottom: 1px solid #d5d3e8;
+    background-color: var(--navbar);
+    border-bottom: 1px solid var(--navbar-border);
     position: sticky;
     top: 0;
     display: flex;
@@ -49,25 +149,24 @@ body {
 }
 
 .navbar nav a {
-    color: #292940;
+    color: var(--text);
     text-decoration: none;
     font-weight: bold;
 }
 
 .navbar nav a:hover {
-    color: #625b9d;
+    color: var(--accent);
 }
 
 .main-container {
     width: 85%;
     max-width: 1100px;
     margin: 40px auto;
-    background-color: white;
-    border: 1px solid #e7e7f2;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 14px;
     padding: 25px;
     box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
-    box-sizing: border-box;
 }
 
 .intro {
@@ -76,23 +175,19 @@ body {
     align-items: stretch;
     gap: 20px;
     padding-bottom: 25px;
-    border-bottom: 1px solid #e7e7f2;
+    border-bottom: 1px solid var(--border);
 }
 
 .intro-tekst {
     width: 45%;
-    background-color: #fafaff;
-    border: 1px solid #e7e7f2;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 20px;
 }
 
-.intro-tekst h1 {
-    color: #292940;
-}
-
 .intro-tekst p {
-    color: #626274;
+    color: var(--muted-text);
     line-height: 1.7;
 }
 
@@ -111,12 +206,12 @@ body {
 }
 
 .card {
-    background-color: white;
-    border: 1px solid #e7e7f2;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
     padding: 20px;
     text-align: center;
     text-decoration: none;
-    color: #292940;
+    color: var(--text);
     border-radius: 14px;
     box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
     transition: transform 0.2s;
@@ -126,39 +221,45 @@ body {
     width: 100%;
     height: 160px;
     object-fit: contain;
-    background-color: #fafaff;
+    background-color: var(--soft-background);
     border-radius: 10px;
     padding: 5px;
     box-sizing: border-box;
 }
 
 .card h2 {
-    color: #292940;
+    color: var(--text);
     font-size: 20px;
 }
 
 .card p {
-    color: #626274;
+    color: var(--muted-text);
     line-height: 1.5;
 }
 
 .card:hover {
-    background-color: #fafaff;
+    background-color: var(--soft-background);
     transform: translateY(-5px);
 }
 
-footer {
-    margin-top: 40px;
+.footer {
+    width: 100%;
+    margin-top: 0;
     padding: 20px;
     text-align: center;
-    background-color: #e9e8fa;
-    color: #292940;
+    background-color: var(--navbar);
+    color: var(--text);
+    flex-shrink: 0;
 }
 
 footer a {
-    color: #625b9d;
+    color: var(--accent);
     text-decoration: none;
     margin: 0 10px;
+}
+
+.footer {
+    margin-top: 0;
 }
 
 footer a:hover {
@@ -170,8 +271,8 @@ footer a:hover {
 table {
     border-collapse: collapse;
     width: 100%;
-    background-color: white;
-    border: 1px solid #e7e7f2;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
@@ -180,21 +281,25 @@ table {
 th, td {
     padding: 16px;
     text-align: left;
-    border-bottom: 1px solid #e7e7f2;
-    color: #292940;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
 }
 
 th {
-    background-color: #625b9d;
+    background-color: var(--accent);
     color: white;
 }
 
-tr:nth-child(even) {
-    background-color: #fafaff;
+td {
+    background-color: var(--surface);
 }
 
-tr:hover {
-    background-color: #eeecfa;
+tr:nth-child(even) td {
+    background-color: var(--soft-background);
+}
+
+tr:hover td {
+    background-color: var(--soft-accent);
 }
 
 /* projecten */
@@ -203,19 +308,20 @@ tr:hover {
     max-width: 1100px;
     width: 85%;
     margin: 40px auto;
-    color: #292940;
+    color: var(--text);
+    flex: 1;
 }
 
 .projecten-pagina h1 {
     text-align: center;
     font-size: 36px;
-    color: #292940;
+    color: var(--text);
     margin-bottom: 15px;
 }
 
 .projecten-intro {
     text-align: center;
-    color: #626274;
+    color: var(--muted-text);
     margin-bottom: 35px;
 }
 
@@ -228,13 +334,14 @@ tr:hover {
 
 
 .project-placeholder {
-    background-color: white;
-    border: 1px solid #e7e7f2;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
     padding: 20px;
     text-align: center;
     border-radius: 14px;
     box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
     transition: transform 0.2s;
+    color: var(--text);
 }
 
 .project-placeholder:hover {
@@ -243,7 +350,7 @@ tr:hover {
 
 .project-afbeelding {
     height: 120px;
-    background-color: #fafaff;
+    background-color: var(--soft-background);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -259,13 +366,11 @@ tr:hover {
 
 
 .project-placeholder h2 {
-    color: #292940;
     font-size: 21px;
 }
 
 
 .project-placeholder p {
-    color: #626274;
     line-height: 1.6;
 }
 
@@ -274,8 +379,8 @@ tr:hover {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 12px;
-    background-color: #eeecfa;
-    color: #625b9d;
+    background-color: var(--soft-accent);
+    color: var(--accent);
     border-radius: 8px;
     font-size: 14px;
 }
@@ -297,32 +402,32 @@ tr:hover {
 .contactpagina > h1 {
     text-align: center;
     font-size: 36px;
-    color: #292940;
+    color: var(--text);
 }
 
 .contactpagina > p {
     text-align: center;
-    color: #626274;
+    color: var(--muted-text);
     margin-bottom: 35px;
 }
 
 
 .ContactInfo {
-    background-color: white;
+    background-color: var(--surface);
+    color: var(--text);
     padding: 25px;
     margin-bottom: 25px;
-    border: 1px solid #e7e7f2;
+    border: 1px solid var(--border);
     border-radius: 14px;
     box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
 }
 
 .ContactInfo h2 {
     margin-top: 0;
-    color: #292940;
 }
 
 .ContactInfo a {
-    color: #625b9d;
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -330,18 +435,17 @@ tr:hover {
     text-decoration: underline;
 }
 
-
 .contactformulier {
-    background-color: white;
+    background-color: var(--surface);
     padding: 25px;
-    border: 1px solid #e7e7f2;
+    border: 1px solid var(--border);
     border-radius: 14px;
     box-shadow: 0 5px 20px rgba(40, 40, 80, 0.05);
+    color: var(--text);
 }
 
 .contactformulier h2 {
     margin-top: 0;
-    color: #292940;
 }
 
 .contactformulier form {
@@ -359,17 +463,18 @@ tr:hover {
 .contactformulier textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #d5d3e8;
+    border: 1px solid var(--input-border);
     border-radius: 8px;
     font-family: Arial, sans-serif;
     font-size: 15px;
-    background-color: #fafaff;
+    background-color: var(--soft-background);
+    color: var(--text);
 }
 
 .contactformulier input:focus,
 .contactformulier textarea:focus {
-    outline: 2px solid #aaa4e0;
-    border-color: #7771bb;
+    outline: 2px solid var(--accent);
+    border-color: var(--accent);
 }
 
 .contactformulier textarea {
@@ -379,7 +484,7 @@ tr:hover {
 .contactformulier button {
     margin-top: 10px;
     padding: 13px;
-    background-color: #625b9d;
+    background-color: var(--accent);
     color: white;
     border: none;
     border-radius: 8px;
@@ -388,43 +493,14 @@ tr:hover {
 }
 
 .contactformulier button:hover {
-    background-color: #494375;
-}
-
-
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    text-align: center;
-    background-color: #e9e8fa;
-    color: #292940;
-}
-
-footer a:hover {
-    background-color: lightgray;
+    background-color: var(--accent-hover);
 }
 
 /* footer */
 
-html, body {
-    min-height: 100%;
-    margin: 0;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 main {
-    flex: 1;
+    flex: 1 0 auto;
 }
-
-.footer {
-    margin-top: 0;
-}
-
 /* Telefoon */
 @media (max-width: 700px) {
 
@@ -529,4 +605,61 @@ main {
         flex-wrap: wrap;
         gap: 15px;
     }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px 15px;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    #theme-switch {
+        position: static;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    .navbar nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+}
+
+/*dark mode*/
+#theme-switch{
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--basevariant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+}
+
+#theme-switch svg:last-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child{
+    display: block;
 }
