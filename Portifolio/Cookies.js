@@ -39,3 +39,12 @@ function getCookie(name) {
 
     return null;
 }
+
+const cards = document.querySelectorAll(".projecten .card");
+
+cards.forEach(function(card) {
+    card.addEventListener("mouseenter", function() {
+        const titel = card.querySelector("h2").textContent;
+        console.log("Gebruiker hovert over: " + titel);
+    });
+});

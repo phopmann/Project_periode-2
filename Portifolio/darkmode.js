@@ -1,4 +1,3 @@
-console.log("darkmode loaded")
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -8,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
         themeSwitch.addEventListener("click", function () {
 
             document.body.classList.toggle("darkmode");
+
+            console.log("Darkmode is gewijzigd");
 
             if (document.body.classList.contains("darkmode")) {
                 localStorage.setItem("darkmode", "active");

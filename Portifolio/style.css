@@ -77,6 +77,14 @@ body {
 
 /* index */
 
+#begroeting {
+    color: var(--accent);
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
 #modalbox {
     position: fixed;
     top: 50%;
@@ -125,6 +133,8 @@ body {
 
 .navbar {
     width: 100%;
+    min-height: 62px;
+    padding: 10px 20px;
     background-color: var(--navbar);
     border-bottom: 1px solid var(--navbar-border);
     position: sticky;
@@ -132,7 +142,6 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 10px 20px;
     z-index: 10;
 }
 
@@ -140,6 +149,16 @@ body {
     width: 35px;
     height: 35px;
     object-fit: cover;
+}
+
+
+#hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
 }
 
 .navbar nav {
@@ -501,6 +520,34 @@ tr:hover td {
 main {
     flex: 1 0 auto;
 }
+
+/*dark mode*/
+#theme-switch{
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--basevariant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+}
+
+#theme-switch svg:last-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child{
+    display: block;
+}
+
 /* Telefoon */
 @media (max-width: 700px) {
 
@@ -607,59 +654,43 @@ main {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     .navbar {
-        display: flex;
         flex-wrap: wrap;
-        padding: 10px 15px;
-        gap: 10px;
     }
 
     .logo {
-        width: 40px;
-        height: 40px;
+        order: 1;
     }
+
+    @media (max-width: 700px) {
+
+    #hamburger {
+        display: block;
+        order: 2;
+        margin-left: auto;
+    }
+
+}
 
     #theme-switch {
         position: static;
-        margin-left: auto;
+        order: 3;
         flex-shrink: 0;
     }
 
     .navbar nav {
+        display: none;
+        order: 4;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
         gap: 15px;
     }
 
+    .navbar nav.active {
+        display: flex;
+    }
 }
 
-/*dark mode*/
-#theme-switch{
-    height: 40px;
-    width: 40px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--basevariant);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 10px;
-    right: 20px;
-}
-
-#theme-switch svg:last-child{
-    display: none;
-}
-
-.darkmode #theme-switch svg:first-child{
-    display: none;
-}
-
-.darkmode #theme-switch svg:last-child{
-    display: block;
-}
